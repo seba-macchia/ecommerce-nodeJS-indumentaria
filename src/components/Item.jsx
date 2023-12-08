@@ -6,15 +6,12 @@ import Card from 'react-bootstrap/Card';
 
 export const Item = ({item}) => {
   return (
-    <Card style={{ width: '100%'}}>
-      <Card.Img variant="top" src={item.pictureUrl} />
-      <Card.Body>
-        <Card.Title>{item.title}</Card.Title>
-        <Card.Text>
-          {item.description}
-        </Card.Text>
+    <Card style={{ width: '100%', textAlign:'center', height: '100%'}}>
+      <Card.Img variant="top" src={item.pictureUrl} style={{height: '50%', objectFit: 'cover'}} />
+      <Card.Body style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+        <Card.Title style={{textAlign: 'center'}}>{item.title}</Card.Title>
         <Link to={`/items/${item.id}`}>
-          <Button variant="primary">Comprar</Button>
+          <Button variant="primary">Ver Detalle</Button>
         </Link>
       </Card.Body>
     </Card>
